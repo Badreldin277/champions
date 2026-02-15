@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #ffffff;
+    color: #222;
+}
+header {
+    position: fixed;      /* يخليه ثابت */
+    top: 0;               /* يثبت فوق */
+    left: 0;
+    width: 100%;          /* يغطي عرض الصفحة */
+    background-color: #ffffff;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #c9a227;
+    z-index: 1000;        /* يخليه فوق كل العناصر */
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap:20px
+}
+
+.logo {
+    font-size: 28px;
+    color: #c9a227;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a {
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #c9a227;
+}
+
+/* ================== عنوان المنتجات ================== */
+h2 {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 40px;
+    color: #c9a227;
+    letter-spacing: 3px;
+}
+
+h2::after {
+    content: "";
+    width: 120px;
+    height: 3px;
+    background: #c9a227;
+    display: block;
+    margin: 15px auto;
+}
+
+/* ================== المعرض (كل الصور في نفس السطر) ================== */
+.hero{
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
+}
+    .gallery {
+    width: 100%;
+    gap: 30px;
+    overflow-x: auto;  
+    box-sizing: border-box;    /* يسمح بالتمرير إذا الشاشة صغيرة */
+}
+          /* يسمح بالتمرير لو الشاشة صغيرة */
+
+
+/* ================== الكرت ================== */
+.card {
+    display: inline-block;
+    width: 280px;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #c9a227;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.4s ease;
+    margin: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(201, 162, 39, 0.3);
+}
+
+/* الصورة */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* المعلومات */
+.info {
+    padding: 20px;
+    text-align: center;
+}
+
+.info h3 {
+    margin: 10px 0;
+    color: #c9a227;
+    font-size: 18px;
+}
+
+.info p {
+    color: #555;
+    font-size: 15px;
+}
+
+/* ================== السعر والزر ================== */
+.price-box {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    background: linear-gradient(45deg, #c9a227, #a67c00);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.buy-btn {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #c9a227;
+}
+/* ================== السلة ================== */
+.cart {
+    position: relative;
+    font-size: 22px;
+    cursor: pointer;
+    color: #c9a227;
+}
+
+.cart-count {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: red;
+    color: white;
+    font-size: 15px;
+    padding: 1px 5px;
+    border-radius: 50%;
+}
+.footer {
+    background: linear-gradient(to right, #111, #222);
+    color: #fff;
+    padding: 50px 0 0 0;
+    margin-top: 60px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 40px;
+}
+
+.footer-section {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #f4c10f;
+}
+
+.footer-section a {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #f4c10f;
+    padding-left: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #f4c10f;
+    color: #000;
+}
+
+.footer-bottom {
+    text-align: center;
+    background: #000;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+/* المسافة التي يتركها Scroll عند النزول للقسم */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* ارتفاع الـ header تقريبًا */
+}
