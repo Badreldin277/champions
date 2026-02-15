@@ -1,20 +1,18 @@
-/* إعدادات عامة */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #ffedb3d5;
-    background-size: cover;
     color: #222;
     scroll-behavior: smooth;
-    padding-top: 65px; /* للهيدر الثابت */
+    padding-top: 70px;
 }
 
-/* الهيدر ثابت */
+/* الهيدر */
 header {
     position: fixed;
     top: 0;
@@ -49,21 +47,22 @@ header {
     color: #c9a227;
 }
 
-/* ================== القسم الرئيسي مع التمركز ================== */
+/* الأقسام */
 .main-container {
     display: flex;
-    align-items: center; /* تمركز أفقياً */
-    justify-content: space-around; /* تمركز عمودياً */
-    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
     text-align: center;
     gap: 30px;
-    padding: 0px 50px;
+    padding: 40px 50px;
+    flex-wrap: wrap;
 }
 
-/* الصورة */
 .main-container img {
-    width: 500px;
-    height: 300px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     border-radius: 15px;
     border: 2px solid #eac342;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -74,44 +73,19 @@ header {
     transform: scale(1.05);
 }
 
-.buy-btn ,i{
-    position: relative;
-    right: 100px;
-    top: 50px;
-    background-color: #222;
-    color: white;
-    border: none;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+/* المعرض */
+.hero {
+    padding: 50px 20px;
 }
 
-.buy-btn:hover {
-    background-color: #c9a227;
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
-/* ================== المعرض (كل الصور في نفس السطر) ================== */
-.hero{
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-     padding: 50px 20px;
 
-}
-    .gallery {
-    width: 100%;
-    gap: 30px;
-    overflow-x: auto;  
-    box-sizing: border-box;    /* يسمح بالتمرير إذا الشاشة صغيرة */
-}
-          /* يسمح بالتمرير لو الشاشة صغيرة */
-
-
-/* ================== الكرت ================== */
+/* الكروت */
 .card {
-    display: inline-block;
     width: 280px;
     background: #ffffff;
     border-radius: 15px;
@@ -119,7 +93,6 @@ header {
     border: 2px solid #c9a227;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: 0.4s ease;
-    margin: 20px;
 }
 
 .card:hover {
@@ -127,14 +100,12 @@ header {
     box-shadow: 0 20px 40px rgba(201, 162, 39, 0.3);
 }
 
-/* الصورة */
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
 }
 
-/* المعلومات */
 .info {
     padding: 15px;
     text-align: center;
@@ -148,27 +119,26 @@ header {
 
 .info p {
     color: #555;
-    font-size: 15px;
+    font-size: 14px;
 }
-
-
 
 /* الفورم */
 .form-section {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     margin: 100px auto;
     padding: 40px;
     background: #ffffff;
     border-radius: 20px;
     border: 2px solid #c9a227;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: 0.4s ease;
 }
 
-
-.form-section h2 {
-    font-size: 32px;
-    color: #c9a227;
-    margin-bottom: 25px;
+.form-section:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(201,162,39,0.4);
+    border-color: #a67c00;
 }
 
 .form-section label {
@@ -177,25 +147,20 @@ header {
     font-weight: bold;
 }
 
-.form-section input[type="email"],
-.form-section input[type="password"] {
+.form-section input {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
     border-radius: 8px;
     border: 1px solid #ccc;
     outline: none;
-    transition: 0.3s;
 }
 
-.form-section input[type="email"]:focus,
-.form-section input[type="password"]:focus {
+.form-section input:focus {
     border-color: #c9a227;
 }
 
 .form-section input[type="submit"] {
-    width: 100%;
-    padding: 12px;
     background: #c9a227;
     color: #fff;
     font-size: 18px;
@@ -208,20 +173,52 @@ header {
 .form-section input[type="submit"]:hover {
     background: #a67c00;
 }
-.form-section {
-    width: 400px;
-    margin: 100px auto;
-    padding: 40px;
-    background: #ffffff;
-    border-radius: 20px;
-    border: 2px solid #c9a227;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    transition: 0.4s ease;
+
+/* الفوتر */
+.footer-frame {
+    width: fit-content;
+    margin: 30px auto;
+    padding: 15px 30px;
+    border: 2px solid #f4c10f;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-/* التأثير عند المرور */
-.form-section:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(201,162,39,0.4);
-    border-color: #a67c00;
+/* Responsive */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 80px 20px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
 }
