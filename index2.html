@@ -6,102 +6,33 @@
     <title>Louvre Museum Products</title>
     <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* فوتر أنيق */
-        .footer {
-            background: linear-gradient(to right, #111, #222);
-            color: #fff;
-            padding: 50px 0 0 0;
-            margin-top: 60px;
-            font-family: Arial, sans-serif;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 0 40px;
-        }
-
-        .footer-section {
-            width: 250px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3,
-        .footer-section h4 {
-            margin-bottom: 15px;
-            color: #f4c10f;
-        }
-
-        .footer-section a {
-            display: block;
-            text-decoration: none;
-            color: #ccc;
-            margin-bottom: 8px;
-            transition: 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #f4c10f;
-            padding-left: 5px;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin-right: 10px;
-            font-size: 18px;
-            color: #fff;
-            background: #333;
-            padding: 10px;
-            border-radius: 50%;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: #f4c10f;
-            color: #000;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            background: #000;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #aaa;
-        }
-    </style>
 </head>
-<body>
-     <header>
-         <a href="#" class="logo">Louvre Museum</a>
-        <nav class="navigation">
-            <a href="#products">Products</a>
-            <a href="#contact">Contact Us</a>
-            <div class="cart">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </div>
-        </nav>
-     </header>
-<br><br>
 
-<!-- قسم المنتجات -->
+<body>
+
+<header>
+    <a href="#" class="logo">Louvre Museum</a>
+    <nav class="navigation">
+        <a href="#products">Products</a>
+        <a href="#contact">Contact Us</a>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+</header>
+
 <section id="products">
     <h2>Products</h2>
+
     <div class="hero">
         <div class="gallery">
+
             <div class="card">
                 <img src="ryan.jpg">
                 <div class="info">
-                    <h3>The Nihgt Watch</h3>
-                    <p>Rembrandt van rijn - 1503</p>
+                    <h3>The Night Watch</h3>
+                    <p>Rembrandt - 1642</p>
                     <div class="price-box">
                         <span class="price">$250</span>
                         <button class="buy-btn">Buy Now</button>
@@ -112,8 +43,8 @@
             <div class="card">
                 <img src="mos.jpg">
                 <div class="info">
-                    <h3>The flower</h3>
-                    <p>Saed eladawy - 1962</p>
+                    <h3>The Flower</h3>
+                    <p>Saed Eladawy - 1962</p>
                     <div class="price-box">
                         <span class="price">$380</span>
                         <button class="buy-btn">Buy Now</button>
@@ -124,8 +55,8 @@
             <div class="card">
                 <img src="mor.jpg">
                 <div class="info">
-                    <h3>Great wave of kanagawa</h3>
-                    <p>Atsushika hokusaiK - 1829</p>
+                    <h3>Great Wave of Kanagawa</h3>
+                    <p>Hokusai - 1829</p>
                     <div class="price-box">
                         <span class="price">$350</span>
                         <button class="buy-btn">Buy Now</button>
@@ -136,8 +67,8 @@
             <div class="card">
                 <img src="boda.jpg">
                 <div class="info">
-                    <h3>luncheon of the boating party</h3>
-                    <p>Auguste renoir - 1942</p>
+                    <h3>Luncheon of the Boating Party</h3>
+                    <p>Renoir - 1881</p>
                     <div class="price-box">
                         <span class="price">$400</span>
                         <button class="buy-btn">Buy Now</button>
@@ -148,8 +79,8 @@
             <div class="card">
                 <img src="abd.jpg">
                 <div class="info">
-                    <h3>Storm on the Sea Galilee</h3>
-                    <p>Rembrandt van rijn - 1633</p>
+                    <h3>Storm on the Sea of Galilee</h3>
+                    <p>Rembrandt - 1633</p>
                     <div class="price-box">
                         <span class="price">$750</span>
                         <button class="buy-btn">Buy Now</button>
@@ -168,45 +99,43 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
 <script>
-    let count = 0;
-    const cartCount = document.querySelector(".cart-count");
-    const buttons = document.querySelectorAll(".buy-btn");
+let count = 0;
+const cartCount = document.querySelector(".cart-count");
+const buttons = document.querySelectorAll(".buy-btn");
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            count++;
-            cartCount.textContent = count;
-        });
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        count++;
+        cartCount.textContent = count;
     });
+});
 </script>
 
-<!-- الفوتر -->
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3>Louvre Museum</h3>
-            <p>متجر لوحات فنية من أعظم الأعمال العالمية.</p>
+
+<footer class="footer-frame" id="contact">
+
+    <div class="footer-content">
+
+        <p class="footer-text">
+            © 2026 جميع الحقوق محفوظة لدى متحف اللوفر - فرنسا
+        </p>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
 
-        <div class="footer-section" id="contact">
-            <h4>CONTACT</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 جميع الحقوق محفوظة لدى متحف اللوفر - فرنسا</p>
-    </div>
 </footer>
+
 
 </body>
 </html>
