@@ -8,25 +8,22 @@ body {
     font-family: 'Georgia', serif;
     background-color: #ffffff;
     color: #222;
+    padding-top: 100px;
 }
+
+/* Header */
 header {
-    position: fixed;      /* يخليه ثابت */
-    top: 0;               /* يثبت فوق */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;          /* يغطي عرض الصفحة */
+    width: 100%;
     background-color: #ffffff;
     padding: 15px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #c9a227;
-    z-index: 1000;        /* يخليه فوق كل العناصر */
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    gap:20px
+    z-index: 1000;
 }
 
 .logo {
@@ -34,6 +31,12 @@ nav{
     color: #c9a227;
     text-decoration: none;
     font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .navigation a {
@@ -47,67 +50,45 @@ nav{
     color: #c9a227;
 }
 
-/* ================== عنوان المنتجات ================== */
+/* Title */
 h2 {
     text-align: center;
     font-size: 45px;
-    margin-top: 40px;
+    margin-bottom: 40px;
     color: #c9a227;
-    letter-spacing: 3px;
 }
 
-h2::after {
-    content: "";
-    width: 120px;
-    height: 3px;
-    background: #c9a227;
-    display: block;
-    margin: 15px auto;
-}
-
-/* ================== المعرض (كل الصور في نفس السطر) ================== */
-.hero{
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-
-}
-    .gallery {
-    width: 100%;
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
-    overflow-x: auto;  
-    box-sizing: border-box;    /* يسمح بالتمرير إذا الشاشة صغيرة */
 }
-          /* يسمح بالتمرير لو الشاشة صغيرة */
 
-
-/* ================== الكرت ================== */
+/* Card */
 .card {
-    display: inline-block;
-    width: 280px;
+    flex: 1 1 280px;
+    max-width: 300px;
     background: #ffffff;
     border-radius: 15px;
     overflow: hidden;
     border: 2px solid #c9a227;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: 0.4s ease;
-    margin: 20px;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(201, 162, 39, 0.3);
+    box-shadow: 0 20px 40px rgba(201,162,39,0.3);
 }
 
-/* الصورة */
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
 }
 
-/* المعلومات */
 .info {
     padding: 20px;
     text-align: center;
@@ -116,15 +97,14 @@ h2::after {
 .info h3 {
     margin: 10px 0;
     color: #c9a227;
-    font-size: 18px;
 }
 
 .info p {
+    font-size: 14px;
     color: #555;
-    font-size: 15px;
 }
 
-/* ================== السعر والزر ================== */
+/* Price */
 .price-box {
     margin-top: 15px;
     display: flex;
@@ -137,7 +117,6 @@ h2::after {
     color: white;
     padding: 6px 14px;
     border-radius: 20px;
-    font-weight: bold;
 }
 
 .buy-btn {
@@ -153,7 +132,8 @@ h2::after {
 .buy-btn:hover {
     background-color: #c9a227;
 }
-/* ================== السلة ================== */
+
+/* Cart */
 .cart {
     position: relative;
     font-size: 22px;
@@ -163,56 +143,46 @@ h2::after {
 
 .cart-count {
     position: absolute;
-    top: -15px;
-    right: -15px;
+    top: -12px;
+    right: -12px;
     background: red;
     color: white;
-    font-size: 15px;
-    padding: 1px 5px;
+    font-size: 13px;
+    padding: 2px 6px;
     border-radius: 50%;
 }
-.footer {
-    background: linear-gradient(to right, #111, #222);
+
+/* Footer */
+/* ================== Footer Frame Style ================== */
+
+.footer-frame {
+    width: fit-content;
+    margin: 60px auto;
+    padding: 25px 40px;
+    border: 2px solid #f4c10f;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #111;
     color: #fff;
-    padding: 50px 0 0 0;
-    margin-top: 60px;
-    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.footer-container {
+.footer-content {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 0 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-.footer-section {
-    width: 250px;
-    margin-bottom: 30px;
+.footer-text {
+    font-size: 14px;
 }
 
-.footer-section h3,
-.footer-section h4 {
-    margin-bottom: 15px;
-    color: #f4c10f;
-}
-
-.footer-section a {
-    display: block;
-    text-decoration: none;
-    color: #ccc;
-    margin-bottom: 8px;
-    transition: 0.3s;
-}
-
-.footer-section a:hover {
-    color: #f4c10f;
-    padding-left: 5px;
-}
+/* Social Icons (بدون تغيير تصميمها) */
 
 .social-icons a {
     display: inline-block;
-    margin-right: 10px;
+    margin: 0 6px;
     font-size: 18px;
     color: #fff;
     background: #333;
@@ -226,16 +196,45 @@ h2::after {
     color: #000;
 }
 
-.footer-bottom {
-    text-align: center;
-    background: #000;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #aaa;
+/* Responsive */
+
+@media (max-width: 600px) {
+    .footer-frame {
+        width: 90%;
+        padding: 20px;
+    }
 }
-/* المسافة التي يتركها Scroll عند النزول للقسم */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 120px; /* ارتفاع الـ header تقريبًا */
+
+/* Responsive */
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .card {
+        flex: 1 1 90%;
+    }
+
+    .price-box {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
